@@ -1,10 +1,11 @@
 require("dotenv").config("./.env");
 
-//const NODE_ENV = "apples"
+const NODE_ENV = "apples"
 
-console.log(process.env.NODE_ENV)
+// console.log(process.env.NODE_ENV)
 
-
+const SECRET_KEY = "hardcoded_secret";
+console.log("Using Hardcoded Secret");
 const http = require("http");
 const hostname = "127.0.0.1"
 const port = 3000;
@@ -23,7 +24,7 @@ f = ""
 filenames.forEach((file) =>{
   f = f +file+" \n";
   })
-res.end(f)
+res.end(`${f}.\n Secret:${SECRET_KEY}`)
 
 
 });
